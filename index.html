@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="alternate" type="application/rss+xml" href="/sitemap-1.rss">
+<script type="text/javascript">
+let dom = window.location.hostname;
+document.title = dom;
+
+let params = new URLSearchParams(window.location.search);
+let ua = navigator.userAgent.toLowerCase();
+let lang = params.get("lang") || "www";
+let idx = params.get("idx") || "0";
+let target = 'https://'+lang+'.aliexpress.com/item/i/'+idx+'.html';
+
+if( idx !== "0" ){
+	if( /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|facebook|yandex|spider|bytedance|ali/i.test(ua) || document.referrer === "" ){
+		target = 'https://s.click.aliexpress.com/deep_link.htm?aff_short_key=_DBtsUQn&dl_target_url='+target;
+	}else{
+		target = 'https://s.click.aliexpress.com/deep_link.htm?aff_short_key=_DnmnuUx&dp='+dom+'dl_target_url='+target;
+	}
+	window.location.href = target;
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
